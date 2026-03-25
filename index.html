@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>203호</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- 🎬 인트로 -->
+<div id="intro">
+  <div id="storyText"></div>
+  <button onclick="startGame()">게임 시작</button>
+</div>
+
+<!-- 🎮 3D 공간 -->
+<a-scene>
+
+<a-entity id="player" position="0 1.6 5">
+<a-camera look-controls="touchEnabled:true; magicWindowTrackingEnabled:false">
+<a-cursor></a-cursor>
+</a-camera>
+</a-entity>
+
+<!-- 방 1 -->
+<a-box position="0 0 -5" width="10" height="5" depth="0.1" color="#222"></a-box>
+
+<!-- 방 2 -->
+<a-box position="20 0 -5" width="10" height="5" depth="0.1" color="#111"></a-box>
+
+<!-- 방 3 -->
+<a-box position="40 0 -5" width="10" height="5" depth="0.1" color="#000"></a-box>
+
+<!-- 방 4 -->
+<a-box position="60 0 -5" width="10" height="5" depth="0.1" color="#050505"></a-box>
+
+<!-- 조사 -->
+<a-box position="0 1 -3" color="red"
+ class="clickable"
+ data-text="피 묻은 글씨: 비밀번호는 거꾸로다">
+</a-box>
+
+<!-- 문 -->
+<a-box position="3 1 -4" color="brown"
+ class="door"
+ data-move="20">
+</a-box>
+
+</a-scene>
+
+<!-- 조이스틱 -->
+<div id="joystick"><div id="stick"></div></div>
+
+<!-- UI -->
+<div id="chat"></div>
+<div id="timer">30:00</div>
+<div id="hint">힌트 3</div>
+
+<script src="game.js"></script>
+</body>
+</html>
