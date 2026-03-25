@@ -97,8 +97,8 @@ function chatMessage(msg, delay=1000){
 }
 
 // 시작 메시지
-setTimeout(()=>chatMessage("은혜: 너 지금 203호지"),2000);
-setTimeout(()=>chatMessage("민교: 나 여기서 못 나갔어"),5000);
+setTimeout(()=>chatMessage("은혜:지금 203호지?"),2000);
+setTimeout(()=>chatMessage("민교:맞아 나 여기서 못 나갔어"),5000);
 
 // ==========================
 // ⏱ 타이머
@@ -125,7 +125,7 @@ document.getElementById("hint").onclick=()=>{
 
  hints--;
  vibrate(200);
- alert("힌트: 처음 단서를 다시 봐");
+ alert("힌트:처음 단서를 다시 봐");
  document.getElementById("hint").innerText="힌트 "+hints;
 };
 
@@ -177,8 +177,8 @@ function endingSuccess(){
   document.body.innerHTML = `
   <div style="color:white;text-align:center;margin-top:40%;">
     <h1>탈출 성공</h1>
-    <p>…문이 열렸다</p>
-    <p>밖이다… 살았다</p>
+    <p>문이 열렸다</p>
+    <p>밖이다 살았다</p>
   </div>
   `;
 
@@ -186,7 +186,7 @@ function endingSuccess(){
 
   setTimeout(()=>{
     document.body.innerHTML += "<p>핸드폰이 울린다</p>";
-    chatMessage("은혜: 너 아직 203호야",500);
+    chatMessage("은혜:너 아직 203호야",500);
 
     // 다시 시작 위치로 강제 이동 (루프)
     setTimeout(()=>{
@@ -218,7 +218,7 @@ function endingFail(){
 
   setTimeout(()=>{
     let div=document.createElement("div");
-    div.innerHTML="민교: 아직 거기야…?";
+    div.innerHTML="민교:아직 거기야…?";
     document.body.appendChild(div);
 
     // 읽음 사라짐 없이 멈춤
@@ -228,28 +228,28 @@ function endingFail(){
 }
 // 🎬 스토리
 let story = [
- "…눈을 떴을 때, 너는 낯선 방에 누워 있었다.",
+ "눈을 떴을 때, 나는 낯선 방에 누워 있었다.",
  "형광등은 깜빡이고 있었고…",
- "방 안에는 아무도 없었다.",
+ "방 안에는 나말고 아무도 없었다.",
  "",
- "문 손잡이를 돌려봤지만… 열리지 않는다.",
+ "문 손잡이를 돌려봤지만 열리지 않는다.",
  "",
  "그때, 핸드폰이 울렸다.",
  "",
- "은혜: 너 지금 203호 들어갔어?",
+ "은혜:지금 203호 들어갔어?",
  "",
- "민교: 거기 들어가면 안된다고 했잖아…",
+ "민교:거기 들어가면 안된다고 했잖아",
  "",
- "은혜: 그 방… 나 예전에 갔었어",
- "은혜: 근데 나 분명 나왔는데…",
+ "은혜:그 방… 나 예전에 갔었어",
+ "은혜:근데 나 분명 나왔는데…",
  "",
- "민교: 이상하다… 너 위치가 계속 바뀌고 있어",
+ "민교:이상하다… 너 위치가 계속 바뀌고 있어",
  "",
- "…그 순간, 벽에서 긁히는 소리가 들린다.",
+ "그 순간, 벽에서 긁히는 소리가 들린다.",
  "",
  "‘203호는… 나갈 수 없다’",
  "",
- "…이제, 너 차례다."
+ "이제, 너 차례다."
 ];
 
 let idx = 0;
